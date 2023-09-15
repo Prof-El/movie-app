@@ -15,12 +15,33 @@ import {ReactComponent as Ticket} from "./icons/Ticket.svg"
 import {ReactComponent as More} from "./icons/Menu.svg"
 
 import VideoPlayer from "../components/VideoPlayer";
+import { useParams } from "react-router-dom";
 
 function MovieBox(props){
-  const location = useLocation()
-   console.log(props, "props");
-   console.log(location, "useLocation Hook");
-   const data = location.state?.data;
+   const location = useLocation()
+  //  console.log(props, "props");
+  //  console.log(location, "useLocation Hook");
+  //  const data = location.state?.data;
+  console.log(props, "props");
+  const data = location.state?.data;
+  console.log(data)
+
+    const [movieData, setMovieData] = useState('')
+    const id  = data.id
+    
+
+    useEffect(() => {
+      getData()
+      window.scrollTo(0,0)
+  }, [])
+
+    const getData = () => {
+      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=11ec9a45249e6fffdfb5db1838a81ff2&language=en-US`)
+      .then(res => res.json())
+      .then(data => setMovieData(data))
+  }
+
+console.log(`movie data ${movieData}`)
 
     const trailer = "https://www.bing.com/videos/search?q=video+of+topgun+trailer+2021&docid=603483767445421082&mid=E1154269594FA1B0FAA0E1154269594FA1B0FAA0&view=detail&FORM=VIRE"
     return(
@@ -63,6 +84,7 @@ function MovieBox(props){
                   <p>Log Out</p>
                 </div>
               </div>
+
               {/* body */}
 
               <div className="body">
@@ -71,21 +93,21 @@ function MovieBox(props){
                 </div>
                 <div className="movie-summary" >
                   <section style={{display: 'flex', fontSize: '1vw', justifyContent: 'space-between', width: '60%'}}>
-                    <p data-testid="movie-title">{data.title} </p>
-                    <p data-testid="movie-release-date">{data.release_date} </p>
+                    <p data-testid="movie-title">{movieData.title} </p>
+                    <p data-testid="movie-release-date">{movieData.release_date} </p>
                     <p>. PG-13 . 2H 10M  Action  Drama</p>
-                    <p data-testid="movie-runtime"> 200 m </p>
+                    <p data-testid="movie-runtime"> {movieData.runtime} </p>
                   </section>
                   <section style={{display: 'flex', fontSize: '1vw', justifyContent: 'center', alignItems: 'center'}}>
                     <Star />
-                    <p style={{marginRight: 10, marginLeft: 5, paddingTop: 13}}>{data.vote_average}</p>
+                    <p style={{marginRight: 10, marginLeft: 5, paddingTop: 13}}>{movieData.vote_average}</p>
                   </section>
                   
                   </div>
                 <div className="movie-info">
                   <div className="info-1">
                     <p data-testid="movie-overview">
-                      {data.overview}
+                      {movieData.overview}
                     </p>
                     <p>Director: Joseph Kosinski</p>
                     <p>Writers: Jim Cash, Jack Epps Jr, Peter Craig</p>
