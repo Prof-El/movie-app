@@ -70,7 +70,7 @@ function MovieBox(props){
                   <VideoPlayer />
                 </div>
                 <div className="movie-summary" >
-                  <section style={{display: 'flex', fontSize: '1vw'}}>
+                  <section style={{display: 'flex', fontSize: '1vw', justifyContent: 'space-between', width: '60%'}}>
                     <p data-testid="movie-title">{data.title} </p>
                     <p data-testid="movie-release-date">{data.release_date} </p>
                     <p>. PG-13 . 2H 10M  Action  Drama</p>

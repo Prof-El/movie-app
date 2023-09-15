@@ -1,8 +1,18 @@
-# React + Vite
+# Getting Started with Create React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was bootstrapped with [Create viteapp@latest]
+## Available Scripts
 
-Currently, two official plugins are available:
+In the project directory, you can run:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### `npm run dev`
+
+Runs the app in the development mode.\
+visit the local address to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+##About
+The app is a movie app which get information about the top rated movies from the imdb api and displays them. You can click on the different movies to get more information about them
+
