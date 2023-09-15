@@ -6,7 +6,7 @@ import './moviebox.css'
 import { ReactComponent as Logo} from "./icons/Logo.svg"
 import {ReactComponent as Home} from "./icons/Home.svg"
 import {ReactComponent as Movies} from "./icons/Movie-Projector.svg"
-import {ReactComponent as Tv} from "./icons/Tv.svg"
+// import {ReactComponent as Tv} from "./icons/Tv.svg"
 import {ReactComponent as Star} from "./icons/Star.svg"
 
 import {ReactComponent as Calender} from "./icons/Calendar.svg"
@@ -41,7 +41,7 @@ function MovieBox(props){
                     <p className="icon-name" style={{marginLeft: 15}}>Movies</p>
                   </div>
                   <div className="tv-icon">
-                    <div className="icon"><Tv /></div>
+                    {/* <div className="icon"><Tv /></div> */}
                     <p className="icon-name" style={{marginLeft: 12}}>Tv Series</p>
                   </div>
                   <div className="calender-icon">
