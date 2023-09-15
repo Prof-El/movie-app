@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Card from "../components/card";
 import Header from "../components/header";
 import './home.css'
+
 import { ReactComponent as Logo} from "./icons/Logo.svg"
 import {ReactComponent as Menu} from "./icons/Menu.svg"
 import {ReactComponent as Play} from "./icons/Play-1.svg"
@@ -11,7 +12,7 @@ import {ReactComponent as Instagram} from "./icons/instagram.svg"
 import {ReactComponent as Twitter} from "./icons/twitter.svg"
 import {ReactComponent as Youtube} from "./icons/youtube.svg"
 // import {ReactComponent as Search} from "./icons/search-1.svg"
-
+import { Col, Row } from 'antd';
 // const API_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=11ec9a45249e6fffdfb5db1838a81ff2'
 
 function Home(){
@@ -68,8 +69,7 @@ const getMovie = ()=>{
   }, [])
 
   
-  console.log(`movieList ${movieList}`)
-  console.log(errorMessage)
+  
 
   const basic ="https://image.tmdb.org/t/p/w500"
     return(
@@ -107,7 +107,18 @@ const getMovie = ()=>{
                         </div>
                     </div>
                 </div>
-                <Card movie={movieList} />
+                <h2 style={{paddingLeft: 10}}>Featured Movies</h2>
+                <div className="grid-container">
+                    
+                    {movieList?.slice(0, 10).map((movie)=> (
+                        <Card key={movie.id} movie={movie} />
+                    ))}
+                </div>
+
+
+
+
+
                 {errorMessage ?   <p style={{fontSize: '6vw', color: "red", fontWeight: '600', backgroundColor: '#101'}}>{errorMessage}</p> : null}
                 <div className="footer">
                         <div className="social-icons">

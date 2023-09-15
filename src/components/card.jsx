@@ -8,18 +8,18 @@ import {Link, useNavigate} from "react-router-dom"
 
 
 
-function Card(props){
+function Card({ movie }){
 // Trying to make the favorite icon dynamic
-  var favoriteGroup = props.movie.map(ele => {
-    return {
-      id: ele.id,
-      on: false
-    }
-  })
+  // var favoriteGroup = props.movie.map(ele => {
+  //   return {
+  //     id: ele.id,
+  //     on: false
+  //   }
+  // })
 
  
 
-  const [fillColor, setFillColor] = useState('none')
+  // const [fillColor, setFillColor] = useState('none')
 
 
     
@@ -41,32 +41,33 @@ function Card(props){
 
  
 
-  const handleClick = () => {
-    if (fillColor == 'none'){
-      setFillColor(prev => 'red')
-    }else {
-      setFillColor(prev => 'none')
-    }
+  // const handleClick = () => {
+  //   if (fillColor == 'none'){
+  //     setFillColor(prev => 'red')
+  //   }else {
+  //     setFillColor(prev => 'none')
+  //   }
 
 
+  // }
+
+  const [favorite, setFavorite] = useState(false);
+  let fillColor = ''
+  if (favorite){
+    fillColor = 'red'
+  }else {
+    fillColor = 'none'
   }
-
    
   return(
     <>
-      <div className="block-categories">
-        <h2>Featured Movies</h2>
-        <Row gutter={[24, 24]}>
-          {
-            props.movie.slice(0, 10).map(movie => {
-              return (
-                <Col lg={4} key={movie.id}>
-                <div className="card">
-                  {/* trying to fix the onclik */}
-                    <div className="fav-icon" id={movie.id}  onClick={()=>{handleClick(movie)}}>
-                      <Heart fill={fillColor} />
-                    </div>
-                <Link to={`/moviebox/${movie.id}`} state={{data: movie}} className="link">
+      <div className="card" data-testid="movie-card">
+          <button className="fav-icon" type="button"   onClick={() => setFavorite(!favorite)}>
+               <Heart fill={fillColor} />
+           </button>     
+                
+                
+                <Link to={`/moviebox/${movie?.id}`} state={{data: movie}} className="link">
                   <div className="content" data-testid="movie=card">
                     <div className="image">
                       <img data-testid="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="poster cover" />
@@ -76,13 +77,10 @@ function Card(props){
                     
                   </div>
                   </Link>
-                  </div>
-                </Col>
-              )
-            })
-          }
-          
-        </Row>
+                  
+                
+        
+         
       </div>
       
 

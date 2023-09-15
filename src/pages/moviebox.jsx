@@ -40,10 +40,10 @@ function MovieBox(props){
                     <div className="icon"><Movies /></div>
                     <p className="icon-name" style={{marginLeft: 15}}>Movies</p>
                   </div>
-                  <div className="tv-icon">
-                    {/* <div className="icon"><Tv /></div> */}
+                  {/* <div className="tv-icon">
+                    <div className="icon"><Tv /></div>
                     <p className="icon-name" style={{marginLeft: 12}}>Tv Series</p>
-                  </div>
+                  </div> */}
                   <div className="calender-icon">
                     <div className="icon"><Calender /></div>
                     <p className="icon-name" style={{marginLeft: 15}}>Upcoming</p>
