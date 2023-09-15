@@ -10,7 +10,7 @@ import {ReactComponent as Facebook} from "./icons/facebook.svg"
 import {ReactComponent as Instagram} from "./icons/instagram.svg"
 import {ReactComponent as Twitter} from "./icons/twitter.svg"
 import {ReactComponent as Youtube} from "./icons/youtube.svg"
-import {ReactComponent as Search} from "./icons/search-1.svg"
+// import {ReactComponent as Search} from "./icons/search-1.svg"
 
 // const API_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=11ec9a45249e6fffdfb5db1838a81ff2'
 
@@ -82,7 +82,7 @@ const getMovie = ()=>{
                         <div className="search">
                             <input  type="text" placeholder="What do you want to watch?" value={inputValue} onChange={handleInputChange}  />
                             <section className="search-icon" onClick={()=>{}}>
-                                <Search />
+                                {/* <Search /> */}
                             </section>
                         </div>
                         
