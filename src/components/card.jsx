@@ -73,7 +73,7 @@ function Card({ movie }){
                       <img data-testid="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="poster cover" />
                     </div>
                     <p className="date" data-testid="movie-release-date">{movie.release_date}</p>
-                    <p data-testid="movie-poster" style={{marginTop: "-10px"}}>{movie.title}</p>
+                    <p data-testid="movie-title" style={{marginTop: "-10px"}}>{movie.title}</p>
                     
                   </div>
                   </Link>

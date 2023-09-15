@@ -18,6 +18,9 @@ import {ReactComponent as More} from "./icons/Menu.svg"
 import VideoPlayer from "../components/VideoPlayer";
 import { useParams } from "react-router-dom";
 
+import Movie from '../assets/Movie.svg'
+
+
 function MovieBox(props){
    const location = useLocation()
   //  console.log(props, "props");
@@ -69,10 +72,13 @@ console.log(`movie data ${movieData}`)
                     </div>
                   </NavLink>
                   
-                  {/* <div className="tv-icon">
-                    <div className="icon"><Tv /></div>
-                    <p className="icon-name" style={{marginLeft: 12}}>Tv Series</p>
-                  </div> */}
+                  <NavLink className="link" to="/" aria-label="Movies">
+                    <div className="tv-icon">
+                      <img className="icon" src={Movie} alt="Movies Icon" style={{height: 24, width: 24}} />
+                      <span className="icon-name">Movie</span>
+                    </div>
+                 
+                  </NavLink>
                   <div className="calender-icon">
                     <div className="icon"><Calender /></div>
                     <p className="icon-name" style={{marginLeft: 15}}>Upcoming</p>
