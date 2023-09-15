@@ -28,6 +28,10 @@
     align-items: center;
 }
 
+.link {
+    text-decoration: none;
+}
+
 .logo > p {
     font-weight: bolder;
 }
@@ -299,6 +303,7 @@
     .watch-options, .showtime, .awards, .rating {
         font-size: 2vw;
     }
+
 
 
 

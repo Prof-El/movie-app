@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import './moviebox.css'
 import { ReactComponent as Logo} from "./icons/Logo.svg"
@@ -48,19 +49,26 @@ console.log(`movie data ${movieData}`)
         <>
             <div className="movie-page">
               <div className="nav-bar">
-                <div className="logo">
-                  <Logo />
-                  <p className="icon-name">Movie Box</p>
-                </div>
+                <Link className="link" to="/" aria-label="home">
+                  <div className="logo">
+                    <Logo />
+                    <p className="icon-name">Movie Box</p>
+                  </div>
+                </Link>
                 <div className="nav-icons"> 
-                  <div className="home-icon">
-                    <div className="icon"><Home /></div>
-                    <p className="icon-name" style={{marginLeft: 15}}>Home</p>
-                  </div>
-                  <div className="movies-icon">
-                    <div className="icon"><Movies /></div>
-                    <p className="icon-name" style={{marginLeft: 15}}>Movies</p>
-                  </div>
+                  <NavLink className="link" to="/" aria-label="home">
+                    <div className="home-icon">
+                      <div className="icon"><Home /></div>
+                      <p className="icon-name" style={{marginLeft: 15}}>Home</p>
+                    </div>
+                  </NavLink>
+                  <NavLink className="link" to="/" aria-label='home'>
+                    <div className="movies-icon">
+                      <div className="icon"><Movies /></div>
+                      <p className="icon-name" style={{marginLeft: 15}}>Movies</p>
+                    </div>
+                  </NavLink>
+                  
                   {/* <div className="tv-icon">
                     <div className="icon"><Tv /></div>
                     <p className="icon-name" style={{marginLeft: 12}}>Tv Series</p>

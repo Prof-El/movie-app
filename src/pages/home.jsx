@@ -65,6 +65,7 @@ const getMovie = ()=>{
 
   useEffect(()=>{
     getMovie()
+    window.scrollTo(0,0)
     
   }, [])
 
